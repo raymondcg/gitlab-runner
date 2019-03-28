@@ -3,8 +3,7 @@ services:
   gitlabRunner:
     container_name: gitlab-runner
     image: "gitlab/gitlab-runner:latest"
+    restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /srv/gitlab-runner/config:/etc/gitlab-runner:Z
-# restart always
-# -d ???
