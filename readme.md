@@ -22,7 +22,6 @@ docker run --rm -t -i -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/git
   --registration-token "<Project_registration_token>" \
   --description "Something Useful" \
   --docker-volumes /var/run/docker.sock:/var/run/docker.sock \
-  --docker-priviledged \
   --env "DOCKER_USERNAME=gah" \
   --env "DOCKER_PASSWORD=gah" \
   --locked="false"
@@ -33,7 +32,7 @@ docker run --rm -t -i -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/git
 * Start Runner
 
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 
 * Stop Runner
