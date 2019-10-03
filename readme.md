@@ -14,14 +14,14 @@
 * Register runner
 
 ```bash
-docker run --rm -t -i -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register \
+docker run --rm -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register \
   --non-interactive \
   --executor "docker" \
   --docker-image docker \
   --url "<URL>" \
   --registration-token "<Project_registration_token>" \
-  --description "Something Useful" \
-  --docker-volumes /var/run/docker.sock:/var/run/docker.sock \
+  --description  Docker Runner \
+  --docker-privileged true \
   --env "DOCKER_USERNAME=gah" \
   --env "DOCKER_PASSWORD=gah" \
   --locked="false"
